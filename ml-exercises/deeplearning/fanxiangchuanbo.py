@@ -8,4 +8,7 @@ class Node(object):
         self.delta = 0
     def set_output(self,output):
         self.output = output
-       
+    def append_downstream_connection(self,conn):
+        self.downstream.append(conn) 
+    def append_upstream_connection(self,):
+        self.upstream.append(conn)

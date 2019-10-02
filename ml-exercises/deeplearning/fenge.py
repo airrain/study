@@ -147,5 +147,5 @@ class SLICProcessor(object):
 
 
 if __name__ == '__main__':
-    p = SLICProcessor('beauty.jpg', 200, 40)
+    p = SLICProcessor('fengjing.jpg', 200, 40)
     p.iterates()

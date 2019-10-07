@@ -16,3 +16,19 @@ class Solution(object):
 		return duplicate.pop()
 m = [2,4,2,5,6,7,5,6,4]
 print(Solution().getOnceNumber(m))
+
+'''方法 2：哈希表
+
+算法
+
+我们用哈希表避免每次查找元素是否存在需要的 O(n)O(n)O(n) 时间。
+
+    遍历 nums 中的每一个元素
+    查找 hash_tablehash 中是否有当前元素的键
+    如果没有，将当前元素作为键插入 hash_tablehash
+    最后， hash_tablehash 中仅有一个元素，用 popitem 获得它
+
+'''
+class Solution1(object):
+	def getOnceNumber(self,nums):
+		

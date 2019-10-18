@@ -25,4 +25,17 @@ cost = [3,4,5,1,2]
 开往 2 号加油站，此时油箱有 6 - 4 + 3 = 5 升汽油
 开往 3 号加油站，你需要消耗 5 升汽油，正好足够你返回到 3 号加油站。
 因此，3 可为起始索引。'''
-class Solution()
+class Solution:
+	def canCompleteCircul(self,gas,cost):
+		n = len(gas)
+		total_tank,curr_tank = 0,0
+		starting_station = 0
+		for i in range(n):
+			total_tank += gas[i] - cost[i]
+			curr_tank += gas[i] - cost[i]
+			if curr_tank < 0:
+				starting_station = i + 1
+				curr_tank = 0
+		return starting_station if total_tank >= 0 else -1
+
+

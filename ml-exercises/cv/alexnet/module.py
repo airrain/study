@@ -47,7 +47,7 @@ class AlexNet(nn.Module):
 
 if __name__ == "__main__":
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    img = Image.open('test.JPEG')
+    img = Image.open('../test.JPEG')
 
     img = img.resize((227, 227),Image.ANTIALIAS).convert('RGB')
     np_data = np.array(img)

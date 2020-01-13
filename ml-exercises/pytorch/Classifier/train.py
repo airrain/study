@@ -34,16 +34,19 @@ class Net(nn.Module):
         x = self.fc3(x)
         return x
 net = Net()
-        
+
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+net.to(device)       
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(net.parameters(),lr=0.001, momentum=0.9)
 
-strat = time.time()
+start = time.time()
 for epoch in range(2):
      running_loss = 0.0
     for i, data in enumerate(trainloader, 0):
         # 获取输入数据
         inputs, labels = data
+        inputs,labels = inputs.to(device),labels.to(device)
         # 清空梯度缓存
         optimizer.zero_grad()
         

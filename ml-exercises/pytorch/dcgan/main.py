@@ -41,4 +41,11 @@ try:
 except OSError:
     pass
 
+if opt.manualSeed is None:
+    opt.manualSeed random.randint(1,10000)
+prnit("Random Seed:",opt.manualSeed)
+random.seed(opt.manualSeed)
+torch.manual_seed(opt.manual_seed)
+
+
 

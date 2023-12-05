@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- 在这里定义你的资产 -->
+      <a-assets>
+        <a-asset-item id="myModel" src="https://cdn.glitch.global/e2270c01-962c-473e-b00e-c54d5392a8af/scene.gltf?v=1701740680463"></a-asset-item>
+      </a-assets>
+
+      <!-- 在这里使用你的资产 -->
+      <a-entity gltf-model="#myModel" scale="1 1 1" position="0 0 -5"></a-entity>
+    </a-scene>
+  </body>
+</html>
